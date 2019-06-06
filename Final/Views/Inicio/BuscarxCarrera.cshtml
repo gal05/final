@@ -1,0 +1,32 @@
+﻿@model Final.Models.Buscar1
+@{
+    ViewBag.Title = "BuscarxCarrera";
+}
+<h1>Seleccione una carrera</h1>
+<div class="form-horizontal">
+
+    <hr />
+
+    <form action="/Inicio/ResultxCarrera" method="post">
+        <div class="form-group">
+            <h2>@Html.LabelFor(model => model.curso, htmlAttributes: new { @class = "control-label col-md-2" })</h2>
+            <div class="col-md-10">
+                <select id="Package_State" name="txtcurso">
+                    <option value="C01">Educacion Informatica</option>
+                    <option value="C02">Administracion</option>
+                    <option value="C03">Contabilidad</option>
+                    <option value="C04">Idiomas</option>
+                    <option value="C05">Ing. de Sistemas</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Calcular" class="btn btn-default" />
+            </div>
+        </div>
+
+    </form>
+</div>
+
+

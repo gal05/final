@@ -1,0 +1,41 @@
+﻿@model Final.Models.Buscar1
+@{
+    ViewBag.Title = "BuscarxNotas";
+}
+
+
+
+<h1>Seleccione una carrera</h1>
+<div class="form-horizontal">
+
+    <hr />
+
+    <form action="/Inicio/ResultxCarrera" method="post">
+        <div class="form-group">
+            <h2>Nombre :</h2>
+            <div class="col-md-10">
+                <input type="text" name="txtnombre" value="" />
+            </div>
+        </div>
+        <div class="form-group">
+            <h2>Curso :</h2>
+            <div class="col-md-10">
+                <select id="Package_State" name="txtcurso">
+                    <option value="Matematica Basica">Matematica Basica</option>
+                    <option value="Filosofia I">Filosofia I</option>
+                    <option value="Psicologia Industrial">Psicologia Industrial</option>
+                    <option value="Algoritmica">Algoritmica</option>
+                    <option value="Lenguaje Java">Lenguaje Java </option>
+                    <option value="Matematica II">Matematica II</option>
+                    <option value="Ingles Tecnico">Ingles Tecnico</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Calcular" class="btn btn-default" />
+            </div>
+        </div>
+
+    </form>
+</div>
