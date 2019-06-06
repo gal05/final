@@ -9,7 +9,7 @@ namespace Final.Models
     {
         public string nombre { get; set; }
         public string curso { get; set; }
-        public double? final { get; set; }
+        public double final { get; set; }
     }
 
 }

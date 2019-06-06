@@ -74,11 +74,11 @@ namespace Final.Controllers
                          }).Take(1).ToList();
 
             System.Diagnostics.Debug.WriteLine(string.Join("\t",final));
-            System.Diagnostics.Debug.WriteLine(final[0].curso);
+            System.Diagnostics.Debug.WriteLine(final[0].finalm);
             Final2 fin = new Final2();
             fin.curso = final[0].curso;
             fin.nombre = final[0].nombre;
-            fin.final = final[0].finalm;
+            fin.final = Convert.ToDouble(final[0].finalm);
 
             return View(final);
         }
