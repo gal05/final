@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace Final.Controllers
 {
     public class InicioController : Controller
@@ -60,7 +61,7 @@ namespace Final.Controllers
         public ActionResult Last()
         {
             var alumno = Convert.ToString(Request.Form["txtnombre"]);
-            var curso = Convert.ToString(Request.Form["txtnombre"]);
+            var curso = Convert.ToString(Request.Form["txtcurso"]);
             var final = (from n in db.NOTAS
                          join a in db.ALUMNOS on n.codalu equals a.codalu
                          join c in db.CURSOS on n.codcur equals c.codcur
@@ -69,8 +70,16 @@ namespace Final.Controllers
                          {
                              nombre = a.nomalu,
                              curso = c.nomcur,
-                             final = (n.pp * 0.2 + n.pt * 0.3 + n.ex * 0.5)
-                         }).ToList();
+                             finalm = (n.pp * 0.2 + n.pt * 0.3 + n.ex * 0.5)
+                         }).Take(1).ToList();
+
+            System.Diagnostics.Debug.WriteLine(string.Join("\t",final));
+            System.Diagnostics.Debug.WriteLine(final[0].curso);
+            Final2 fin = new Final2();
+            fin.curso = final[0].curso;
+            fin.nombre = final[0].nombre;
+            fin.final = final[0].finalm;
+
             return View(final);
         }
 

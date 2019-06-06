@@ -162,6 +162,7 @@
     </Compile>
     <Compile Include="Models\busca2.cs" />
     <Compile Include="Models\Buscar1.cs" />
+    <Compile Include="Models\Final2.cs" />
     <Compile Include="NOTAS.cs">
       <DependentUpon>EstudioModel.tt</DependentUpon>
     </Compile>
